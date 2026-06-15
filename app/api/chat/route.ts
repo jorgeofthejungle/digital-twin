@@ -6,7 +6,10 @@ if (!process.env.CLAUDE_API_KEY) {
   throw new Error("CLAUDE_API_KEY environment variable is not set");
 }
 
-const client = new Anthropic({ apiKey: process.env.CLAUDE_API_KEY });
+const client = new Anthropic({
+  apiKey: process.env.CLAUDE_API_KEY,
+  baseURL: "https://api.anthropic.com",
+});
 
 const MAX_MESSAGES = 40;
 const MAX_CONTENT_LENGTH = 4000;
