@@ -6,7 +6,7 @@ import GlassCard from "@/app/components/ui/GlassCard";
 import GlowBadge from "@/app/components/ui/GlowBadge";
 import SectionLabel from "@/app/components/ui/SectionLabel";
 import AnimatedSection from "@/app/components/ui/AnimatedSection";
-import { PROFILE, PROJECTS } from "@/app/data/portfolio";
+import { PROJECTS } from "@/app/data/portfolio";
 import { staggerContainer, fadeUp } from "@/app/lib/variants";
 
 const STATUS_LABEL: Record<string, string> = {
