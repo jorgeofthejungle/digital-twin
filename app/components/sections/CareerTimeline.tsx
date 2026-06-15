@@ -48,7 +48,7 @@ export default function CareerTimeline() {
             {EXPERIENCE.map((item, i) => {
               const isEven = i % 2 === 0;
               return (
-                <div key={i} className="relative flex items-start gap-6 md:gap-0">
+                <div key={`${item.company}-${item.role}`} className="relative flex items-start gap-6 md:gap-0">
                   {/* Mobile layout: all left-aligned */}
                   <div className="flex items-start gap-4 pl-12 md:hidden w-full">
                     {/* Node */}

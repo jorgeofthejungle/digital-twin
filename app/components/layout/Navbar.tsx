@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Process", href: "#process" },
-  { label: "Education", href: "#education" },
   { label: "Portfolio", href: "#portfolio" },
 ];
 
@@ -31,6 +30,7 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
+        aria-label="Main navigation"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "bg-brand-deep/85 backdrop-blur-xl border-b border-brand-border"
@@ -62,22 +62,25 @@ export default function Navbar() {
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-cyan transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
-            <motion.a
-              href="mailto:its.joshburgos@gmail.com"
+            <motion.button
+              onClick={() => handleNavClick("#contact")}
               className="px-4 py-2 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan text-sm font-medium hover:bg-brand-cyan/20 transition-colors"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
               Let&apos;s Talk
-            </motion.a>
+            </motion.button>
           </div>
 
           {/* Mobile hamburger */}
           <button
             className="md:hidden text-slate-400 hover:text-brand-cyan transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            {menuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
       </motion.nav>
@@ -96,6 +99,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
             />
             <motion.div
+              id="mobile-menu"
               className="absolute top-0 right-0 h-full w-72 bg-brand-mid border-l border-brand-border flex flex-col pt-24 pb-8 px-8 gap-6"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -112,12 +116,12 @@ export default function Navbar() {
                 </button>
               ))}
               <div className="mt-auto">
-                <a
-                  href="mailto:its.joshburgos@gmail.com"
+                <button
+                  onClick={() => handleNavClick("#contact")}
                   className="block w-full text-center px-4 py-3 rounded-lg bg-brand-cyan text-brand-deep font-semibold hover:bg-brand-cyan/90 transition-colors"
                 >
                   Let&apos;s Talk
-                </a>
+                </button>
               </div>
             </motion.div>
           </motion.div>

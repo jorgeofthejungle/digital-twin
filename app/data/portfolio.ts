@@ -1,44 +1,34 @@
-import type { Profile, ExperienceItem, EducationItem, ProcessStep } from "@/app/types";
+import type { Profile, ExperienceItem, EducationItem, ProcessStep, ProjectItem } from "@/app/types";
 
 export const PROFILE: Profile = {
   name: "Joshua Burgos",
-  headline: "AI Automation Specialist",
-  location: "Davao, Philippines",
+  headline: "Operations & Customer Experience Specialist",
+  location: "Davao, Davao Region, Philippines",
   email: "its.joshburgos@gmail.com",
   linkedin: "https://www.linkedin.com/in/jorgeofthejungle",
   summary:
-    "I build AI automation systems that cut manual work and sharpen decision-making. Built for production, not demos.",
+    "Operations and customer experience professional with 11+ years spanning technical support, ecommerce, marketplace management, and retail operations. I've managed online stores across Amazon, eBay, Etsy, Walmart, and Shopify — handling listing optimization, platform compliance, search visibility, and the full customer message-to-resolution cycle. Lately I've been adding workflow automation to the mix, building with n8n, GoHighLevel, and Claude to streamline repetitive operations and customer-facing processes.",
 };
 
 export const TYPING_PHRASES = [
-  "AI Automation Specialist",
+  "Operations & CX Specialist",
   2000,
-  "n8n Workflow Architect",
+  "Ecommerce Marketplace Manager",
   2000,
-  "Voice Agent Builder",
+  "Workflow Automation Builder",
   2000,
-  "RAG Systems Engineer",
-  2000,
-  "MCP Integration Expert",
+  "n8n + Claude Builder",
   2000,
 ];
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
-    company: "jorgeofthejungle",
-    role: "AI Automation Specialist",
-    period: "Jan 2026 – Present",
-    current: true,
-    description:
-      "Building production-grade AI automation systems — agentic workflows, voice agents, RAG pipelines, and MCP integrations for SMBs and agencies. n8n + Claude ecosystem as the core stack.",
-  },
-  {
     company: "Mount Pleasant Bottle Depot",
     role: "Manager",
-    period: "Jan 2022 – Present",
-    current: true,
+    period: "Jan 2022 – May 2026",
+    current: false,
     description:
-      "Led day-to-day operations and a hands-on team. Focused on improving workflows, resolving issues fast, and maintaining a reliable, well-run environment. Handled hiring, onboarding, and safety.",
+      "Managed day-to-day operations at a busy bottle depot, keeping things running smoothly while leading a hands-on team. Focused on solving problems as they came up, improving workflows, and making sure customers had a positive experience. Built strong relationships through clear communication and quick issue resolution, while training and supporting staff to perform at their best. Also handled hiring, onboarding, and safety.",
   },
   {
     company: "Mount Pleasant Bottle Depot",
@@ -46,7 +36,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     period: "Jun 2021 – Dec 2021",
     current: false,
     description:
-      "First point of contact for customers. Handled cash transactions with accuracy, maintained depot cleanliness and organization, and delivered consistent, friendly service.",
+      "Sorted and counted refundable containers and handled cash transactions with accuracy. Acted as the first point of contact for customers, providing friendly and efficient service. Maintained the cleanliness and organization of the depot, helping ensure a safe and well-run environment.",
   },
   {
     company: "Freelance",
@@ -54,7 +44,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     period: "Apr 2015 – Jan 2021",
     current: false,
     description:
-      "Drove online sales by building and optimizing digital storefronts across multiple platforms. Applied SEO, A/B testing, and data analysis to maximize ROI. Managed listings, campaigns, and third-party integrations.",
+      "Drove online sales by building and optimizing digital storefronts across Amazon, eBay, Etsy, Walmart, and Shopify. Developed strategies to improve product visibility, increase traffic, and boost conversions. Applied SEO, A/B testing, and data analysis to maximize ROI. Managed listings, promotional campaigns, and third-party integrations. Handled customer inquiries across email, chat, and phone.",
   },
 ];
 
@@ -109,35 +99,53 @@ export const PROCESS_STEPS: ProcessStep[] = [
 export const STACK = [
   "n8n",
   "Claude AI",
-  "Supabase",
   "GoHighLevel",
-  "RAG",
-  "Voice Agents",
-  "MCP",
-  "Agentic Workflows",
+  "Amazon",
+  "eBay",
+  "Etsy",
+  "Walmart",
+  "Shopify",
 ];
 
 export const SKILLS = [
-  "API Integration",
+  "Ecommerce Operations",
+  "Marketplace Management",
+  "Customer Experience",
+  "Workflow Automation",
   "n8n",
-  "Agentic Workflows",
-  "Voice Agents",
-  "RAG Systems",
-  "MCP",
-  "Claude AI",
-  "Supabase",
   "GoHighLevel",
+  "Claude AI",
+  "Listing Optimization",
+  "Platform Compliance",
+  "SEO & A/B Testing",
   "Team Leadership",
   "Operations Management",
-  "Ecommerce",
-  "Prompt Engineering",
-  "Process Automation",
-  "System Design",
+  "Technical Support",
+  "Process Improvement",
 ];
 
 export const STATS = [
-  { value: "3+", label: "Years in AI Systems" },
-  { value: "5", label: "Step Proven Process" },
+  { value: "11+", label: "Years of Experience" },
+  { value: "5", label: "Marketplaces Managed" },
   { value: "2", label: "Degrees Earned" },
-  { value: "∞", label: "Production-first Philosophy" },
+  { value: "5", label: "Step Proven Process" },
+];
+
+export const PROJECTS: ProjectItem[] = [
+  {
+    title: "Dental Clinic RAG",
+    description:
+      "RAG-powered AI assistant built for a dental clinic. Lets staff and patients query clinic knowledge — procedures, pricing, scheduling policies — through a conversational interface backed by Claude.",
+    tags: ["RAG", "Claude AI", "n8n"],
+    type: "personal",
+    status: "in-progress",
+  },
+  {
+    title: "StockPilot PH",
+    description:
+      "Philippine Stock Exchange data pipeline and analysis tool. Scrapes, normalizes, and scores PSE-listed equities — surfacing fundamentals, momentum signals, and daily rankings in a self-hosted dashboard.",
+    tags: ["Python", "PostgreSQL", "Data Analysis", "PSE"],
+    type: "personal",
+    status: "in-progress",
+  },
 ];

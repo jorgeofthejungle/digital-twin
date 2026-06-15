@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import type { GlowVariant } from "@/app/types";
 
@@ -11,7 +12,7 @@ const glowMap: Record<GlowVariant, string> = {
 };
 
 interface GlassCardProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   glow?: GlowVariant;
   hover?: boolean;

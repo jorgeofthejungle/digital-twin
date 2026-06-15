@@ -31,7 +31,7 @@ export default function Education() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
           {EDUCATION.map((edu, i) => (
             <motion.div
-              key={i}
+              key={edu.school}
               variants={i === 0 ? slideLeft : slideRight}
               initial="hidden"
               whileInView="visible"

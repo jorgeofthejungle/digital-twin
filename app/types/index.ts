@@ -29,4 +29,13 @@ export interface Profile {
   summary: string;
 }
 
+export interface ProjectItem {
+  title: string;
+  description: string;
+  tags: string[];
+  type: "personal" | "client";
+  status: "live" | "in-progress" | "archived";
+  link?: string;
+}
+
 export type GlowVariant = "cyan" | "blue" | "violet" | "green";

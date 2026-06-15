@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes n8nac list 2>&1)",
+      "Bash(npx --yes n8nac env status --json 2>&1)",
+      "Bash(npx --yes n8nac workspace migrate --json 2>&1)",
+      "Bash(pg_isready *)"
+    ]
+  }
+}

@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Process", href: "#process" },
-  { label: "Education", href: "#education" },
   { label: "Portfolio", href: "#portfolio" },
 ];
 
@@ -67,7 +66,7 @@ export default function Footer() {
             © 2026 Joshua Burgos · Davao, Philippines
           </span>
           <span className="text-xs text-slate-600">
-            AI Automation Specialist
+            Operations & Customer Experience Specialist
           </span>
         </div>
       </div>

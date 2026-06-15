@@ -23,11 +23,11 @@ export default function Skills() {
       </div>
 
       {/* Marquee row 1 */}
-      <div className="relative mb-4">
+      <div className="relative mb-4" aria-hidden="true">
         <div className="flex gap-4 animate-marquee whitespace-nowrap">
           {ROW1.map((skill, i) => (
             <GlowBadge
-              key={i}
+              key={`row1-${skill}-${i}`}
               label={skill}
               variant={VARIANTS[i % VARIANTS.length]}
               className="shrink-0 text-sm px-4 py-2"
@@ -37,11 +37,11 @@ export default function Skills() {
       </div>
 
       {/* Marquee row 2 */}
-      <div className="relative">
+      <div className="relative" aria-hidden="true">
         <div className="flex gap-4 animate-marquee-reverse whitespace-nowrap">
           {ROW2.map((skill, i) => (
             <GlowBadge
-              key={i}
+              key={`row2-${skill}-${i}`}
               label={skill}
               variant={VARIANTS[(i + 2) % VARIANTS.length]}
               className="shrink-0 text-sm px-4 py-2"
@@ -49,6 +49,13 @@ export default function Skills() {
           ))}
         </div>
       </div>
+
+      {/* Screen-reader accessible skill list (visually hidden) */}
+      <ul className="sr-only">
+        {SKILLS.map((skill) => (
+          <li key={skill}>{skill}</li>
+        ))}
+      </ul>
     </AnimatedSection>
   );
 }

@@ -29,7 +29,7 @@ export default function About() {
           <GlassCard className="p-8 relative overflow-hidden" glow="cyan">
             <span
               className="absolute top-2 left-4 font-display font-bold text-[120px] leading-none text-brand-cyan/10 select-none pointer-events-none"
-              aria-hidden
+              aria-hidden="true"
             >
               &ldquo;
             </span>
@@ -40,11 +40,11 @@ export default function About() {
               <div className="flex flex-col gap-3">
                 <div>
                   <span className="text-xs font-mono text-brand-cyan/60 tracking-wider uppercase">Specialties</span>
-                  <p className="text-sm text-slate-400 mt-1">Agentic workflows · AI agents · Voice agents · RAG · Agentic RAG</p>
+                  <p className="text-sm text-slate-400 mt-1">Ecommerce ops · Marketplace management · Workflow automation · Customer experience</p>
                 </div>
                 <div>
-                  <span className="text-xs font-mono text-brand-cyan/60 tracking-wider uppercase">How I work</span>
-                  <p className="text-sm text-slate-400 mt-1">Diagnose → Propose → Build → Hand off → Maintain</p>
+                  <span className="text-xs font-mono text-brand-cyan/60 tracking-wider uppercase">Platforms</span>
+                  <p className="text-sm text-slate-400 mt-1">Amazon · eBay · Etsy · Walmart · Shopify</p>
                 </div>
               </div>
             </div>

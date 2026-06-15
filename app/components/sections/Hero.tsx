@@ -3,13 +3,12 @@
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { MapPin, ExternalLink, Mail, ChevronDown } from "lucide-react";
-import GlowBadge from "@/app/components/ui/GlowBadge";
 import { PROFILE, TYPING_PHRASES } from "@/app/data/portfolio";
 import { heroStagger, fadeUp } from "@/app/lib/variants";
 
 const TypingEffect = dynamic(() => import("@/app/components/effects/TypingEffect"), {
   ssr: false,
-  loading: () => <span className="text-brand-cyan">AI Automation Specialist</span>,
+  loading: () => <span className="text-brand-cyan">Operations & CX Specialist</span>,
 });
 
 export default function Hero() {
@@ -61,7 +60,11 @@ export default function Hero() {
         {/* CTAs */}
         <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <motion.a
-            href={`mailto:${PROFILE.email}`}
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="px-8 py-4 rounded-xl bg-brand-cyan text-brand-deep font-display font-bold text-base hover:bg-brand-cyan/90 transition-colors shadow-glow-cyan"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
@@ -84,23 +87,28 @@ export default function Hero() {
             href={PROFILE.linkedin}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
             className="text-slate-600 hover:text-brand-cyan transition-colors"
             whileHover={{ y: -2 }}
           >
-            <ExternalLink size={20} />
+            <ExternalLink size={20} aria-hidden="true" />
           </motion.a>
           <motion.a
             href={`mailto:${PROFILE.email}`}
+            aria-label={`Send email to ${PROFILE.email}`}
             className="text-slate-600 hover:text-brand-cyan transition-colors"
             whileHover={{ y: -2 }}
           >
-            <Mail size={20} />
+            <Mail size={20} aria-hidden="true" />
           </motion.a>
         </motion.div>
       </motion.div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-600 animate-bounce-slow">
+      <div
+        aria-hidden="true"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-600 animate-bounce-slow"
+      >
         <ChevronDown size={24} />
       </div>
     </section>

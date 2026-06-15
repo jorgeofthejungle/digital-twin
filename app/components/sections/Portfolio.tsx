@@ -1,62 +1,78 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Construction, ArrowRight } from "lucide-react";
+import { ArrowRight, User } from "lucide-react";
 import GlassCard from "@/app/components/ui/GlassCard";
 import GlowBadge from "@/app/components/ui/GlowBadge";
 import SectionLabel from "@/app/components/ui/SectionLabel";
 import AnimatedSection from "@/app/components/ui/AnimatedSection";
-import { PROFILE } from "@/app/data/portfolio";
+import { PROFILE, PROJECTS } from "@/app/data/portfolio";
 import { staggerContainer, fadeUp } from "@/app/lib/variants";
 
-const PLACEHOLDERS = [
-  { title: "Agentic RAG Pipeline", tag: "RAG + n8n" },
-  { title: "Voice Agent System", tag: "Voice + Claude" },
-  { title: "SMB Automation Suite", tag: "GoHighLevel + n8n" },
-];
+const STATUS_LABEL: Record<string, string> = {
+  live: "Live",
+  "in-progress": "In Progress",
+  archived: "Archived",
+};
 
 export default function Portfolio() {
   return (
     <AnimatedSection id="portfolio" className="section-pad px-6 relative z-10">
       <div className="max-w-7xl mx-auto">
         <SectionLabel text="Portfolio" />
-        <div className="flex items-start justify-between flex-wrap gap-4 mb-16">
-          <motion.h2
-            className="font-display font-bold text-4xl md:text-5xl text-slate-100 max-w-2xl"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            Work in<br />
-            <span className="gradient-text">Progress</span>
-          </motion.h2>
-          <div className="flex items-center gap-2 text-slate-600 pt-3">
-            <Construction size={18} />
-            <span className="text-sm">Documenting builds</span>
-          </div>
-        </div>
+        <motion.h2
+          className="font-display font-bold text-4xl md:text-5xl text-slate-100 mb-16 max-w-2xl"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          Personal<br />
+          <span className="gradient-text">Projects</span>
+        </motion.h2>
 
-        {/* Placeholder cards */}
+        {/* Project cards */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {PLACEHOLDERS.map((item, i) => (
-            <motion.div key={i} variants={fadeUp}>
-              <GlassCard className="p-6 h-48 flex flex-col justify-between relative overflow-hidden" glow="cyan">
-                {/* Shimmer overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent animate-pulse pointer-events-none" />
-                <div>
-                  <GlowBadge label="In Progress" variant="cyan" className="mb-3" />
-                  <h3 className="font-display font-semibold text-base text-slate-300">{item.title}</h3>
+          {PROJECTS.map((project) => (
+            <motion.div key={project.title} variants={fadeUp}>
+              <GlassCard className="p-8 h-full flex flex-col justify-between gap-6" glow="cyan">
+                <div className="flex flex-col gap-4">
+                  {/* Header row */}
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-center gap-2">
+                      <GlowBadge label={STATUS_LABEL[project.status]} variant="cyan" />
+                      <span className="flex items-center gap-1 text-[11px] font-semibold tracking-widest uppercase text-slate-600">
+                        <User size={11} />
+                        Personal
+                      </span>
+                    </div>
+                  </div>
+
+                  <h3 className="font-display font-bold text-xl text-slate-100 leading-snug">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-sm text-slate-400 leading-relaxed">
+                    {project.description}
+                  </p>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-slate-600">{item.tag}</span>
-                  <span className="text-xs text-slate-700">Case study coming soon</span>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs px-2.5 py-1 rounded-md bg-brand-mid border border-brand-border text-slate-500 font-mono"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </GlassCard>
             </motion.div>
@@ -76,10 +92,14 @@ export default function Portfolio() {
                 Let&apos;s build something that works.
               </h3>
               <p className="text-slate-500 mb-8 leading-relaxed">
-                I&apos;m documenting my builds. In the meantime, let&apos;s talk about what you need automated.
+                More case studies coming soon. In the meantime, let&apos;s talk about what you need automated.
               </p>
               <motion.a
-                href={`mailto:${PROFILE.email}`}
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-cyan text-brand-deep font-display font-bold text-base hover:bg-brand-cyan/90 transition-colors shadow-glow-cyan"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}

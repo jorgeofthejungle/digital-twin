@@ -10,7 +10,9 @@ export default function ParticleBackground() {
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
-    }).then(() => setReady(true));
+    })
+      .then(() => setReady(true))
+      .catch((err: unknown) => console.error("ParticleBackground init error:", err));
   }, []);
 
   if (!ready) return null;
@@ -18,6 +20,7 @@ export default function ParticleBackground() {
   return (
     <Particles
       id="tsparticles"
+      aria-hidden="true"
       className="fixed inset-0 z-[2] pointer-events-none"
       options={{
         fullScreen: false,

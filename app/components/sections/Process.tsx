@@ -1,5 +1,6 @@
 "use client";
 
+import type { ElementType } from "react";
 import { motion } from "framer-motion";
 import { Search, FileText, Code2, Package, RefreshCw } from "lucide-react";
 import GlassCard from "@/app/components/ui/GlassCard";
@@ -8,7 +9,7 @@ import AnimatedSection from "@/app/components/ui/AnimatedSection";
 import { PROCESS_STEPS } from "@/app/data/portfolio";
 import { staggerContainer, fadeUp } from "@/app/lib/variants";
 
-const ICONS: Record<string, React.ElementType> = {
+const ICONS: Record<string, ElementType> = {
   Search,
   FileText,
   Code2,
@@ -56,7 +57,7 @@ export default function Process() {
                   {/* Giant step number */}
                   <span
                     className="absolute -top-2 -right-1 font-display font-bold text-[96px] leading-none text-brand-cyan/10 select-none pointer-events-none"
-                    aria-hidden
+                    aria-hidden="true"
                   >
                     {step.step}
                   </span>

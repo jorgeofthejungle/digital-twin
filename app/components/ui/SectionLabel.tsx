@@ -16,7 +16,7 @@ export default function SectionLabel({ text }: SectionLabelProps) {
       viewport={{ once: true }}
       className="inline-block text-xs font-mono tracking-widest text-brand-cyan/70 uppercase mb-4"
     >
-      // {text}
+      {`// ${text}`}
     </motion.span>
   );
 }
