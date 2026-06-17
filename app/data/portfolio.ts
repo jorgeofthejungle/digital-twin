@@ -13,11 +13,11 @@ export const PROFILE: Profile = {
 export const TYPING_PHRASES = [
   "Your ops, finally under control.",
   2000,
-  "Ecommerce that actually converts.",
+  "Marketplace listings that actually sell.",
   2000,
   "Automation that runs itself.",
   2000,
-  "Systems your team can follow.",
+  "Less managing. More growing.",
   2000,
 ];
 
@@ -127,7 +127,7 @@ export const SKILLS = [
 export const STATS = [
   { value: "11+", label: "Years solving ops problems" },
   { value: "5", label: "Marketplaces, end to end" },
-  { value: "24h", label: "Typical reply time" },
+  { value: "24h", label: "Reply time, guaranteed" },
   { value: "5", label: "Step process, no surprises" },
 ];
 

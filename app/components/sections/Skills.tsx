@@ -1,61 +1,106 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { ShoppingBag, Settings2, Zap } from "lucide-react";
+import type { ElementType } from "react";
+import GlassCard from "@/app/components/ui/GlassCard";
 import SectionLabel from "@/app/components/ui/SectionLabel";
 import AnimatedSection from "@/app/components/ui/AnimatedSection";
-import GlowBadge from "@/app/components/ui/GlowBadge";
-import { SKILLS } from "@/app/data/portfolio";
-import type { GlowVariant } from "@/app/types";
+import { staggerContainer, fadeUp } from "@/app/lib/variants";
 
-const ROW1 = [...SKILLS, ...SKILLS];
-const ROW2 = [...SKILLS.slice().reverse(), ...SKILLS.slice().reverse()];
+interface ServiceCard {
+  icon: ElementType;
+  area: string;
+  headline: string;
+  outcome: string;
+  tags: string[];
+}
 
-const VARIANTS: GlowVariant[] = ["cyan", "blue", "violet", "green"];
+const SERVICES: ServiceCard[] = [
+  {
+    icon: ShoppingBag,
+    area: "Ecommerce & Marketplace",
+    headline: "Listings that sell. Accounts that stay healthy.",
+    outcome:
+      "I manage the full picture: listing optimization, search visibility, platform compliance, and the customer message-to-resolution cycle. You stop firefighting the platform and start seeing the numbers move.",
+    tags: ["Amazon", "eBay", "Etsy", "Walmart", "Shopify"],
+  },
+  {
+    icon: Settings2,
+    area: "Operations & Systems",
+    headline: "A business that runs when you step away.",
+    outcome:
+      "I map your workflows, document the processes, and build systems your team can actually follow — so the business doesn't stall every time you're unavailable.",
+    tags: ["Process Design", "SOPs", "Workflow Mapping", "Team Ops"],
+  },
+  {
+    icon: Zap,
+    area: "Workflow Automation",
+    headline: "Cut the repetitive work. Keep the results.",
+    outcome:
+      "I build automations that connect your tools and handle the manual work end to end. Your team gets hours back every week with fewer errors and no more copy-paste.",
+    tags: ["n8n", "GoHighLevel", "Claude AI", "API Integrations"],
+  },
+];
 
 export default function Skills() {
   return (
-    <AnimatedSection id="skills" className="section-pad relative z-10 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 mb-12">
+    <AnimatedSection id="skills" className="section-pad relative z-10">
+      <div className="max-w-7xl mx-auto px-6">
         <SectionLabel text="What I Do" />
-        <h2 className="font-display font-bold text-4xl md:text-5xl text-slate-100 max-w-2xl">
-          The territory<br />
-          <span className="gradient-text">I work in</span>
-        </h2>
-      </div>
+        <motion.h2
+          className="font-display font-bold text-4xl md:text-5xl text-slate-100 mb-16 max-w-2xl"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          Ecommerce. Operations.<br />
+          <span className="gradient-text">Automation.</span>
+        </motion.h2>
 
-      {/* Marquee row 1 */}
-      <div className="relative mb-4" aria-hidden="true">
-        <div className="flex gap-4 animate-marquee whitespace-nowrap">
-          {ROW1.map((skill, i) => (
-            <GlowBadge
-              key={`row1-${skill}-${i}`}
-              label={skill}
-              variant={VARIANTS[i % VARIANTS.length]}
-              className="shrink-0 text-sm px-4 py-2"
-            />
-          ))}
-        </div>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {SERVICES.map((service) => {
+            const Icon = service.icon;
+            return (
+              <motion.div key={service.area} variants={fadeUp}>
+                <GlassCard className="p-8 h-full flex flex-col gap-5" glow="cyan">
+                  <div className="p-3 rounded-xl bg-brand-cyan/10 w-fit">
+                    <Icon size={22} className="text-brand-cyan" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-mono text-brand-cyan/60 tracking-wider uppercase mb-2">
+                      {service.area}
+                    </p>
+                    <h3 className="font-display font-bold text-lg text-slate-100 leading-snug">
+                      {service.headline}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-slate-400 leading-relaxed flex-1">
+                    {service.outcome}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {service.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-2.5 py-1 rounded-md bg-brand-mid border border-brand-border text-slate-500 font-mono"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </GlassCard>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
-
-      {/* Marquee row 2 */}
-      <div className="relative" aria-hidden="true">
-        <div className="flex gap-4 animate-marquee-reverse whitespace-nowrap">
-          {ROW2.map((skill, i) => (
-            <GlowBadge
-              key={`row2-${skill}-${i}`}
-              label={skill}
-              variant={VARIANTS[(i + 2) % VARIANTS.length]}
-              className="shrink-0 text-sm px-4 py-2"
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Screen-reader accessible skill list (visually hidden) */}
-      <ul className="sr-only">
-        {SKILLS.map((skill) => (
-          <li key={skill}>{skill}</li>
-        ))}
-      </ul>
     </AnimatedSection>
   );
 }

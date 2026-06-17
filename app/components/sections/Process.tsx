@@ -29,8 +29,8 @@ export default function Process() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          The 5-step<br />
-          <span className="gradient-text">Automation Process</span>
+          How every<br />
+          <span className="gradient-text">engagement works</span>
         </motion.h2>
         <motion.p
           className="text-slate-500 text-base mb-16 max-w-xl"

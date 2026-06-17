@@ -62,7 +62,7 @@ export default function Hero() {
           variants={fadeUp}
           className="text-slate-400 text-lg max-w-xl mx-auto mb-10 leading-relaxed"
         >
-          I help small business owners and ecommerce sellers get their operations under control — and keep them that way.
+          I work with small business owners and ecommerce sellers when the business is growing but the ops aren&apos;t keeping up.
         </motion.p>
 
         {/* CTAs */}
@@ -77,7 +77,7 @@ export default function Hero() {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
           >
-            Let&apos;s Talk
+            Book a Free Call
           </motion.a>
           <motion.button
             onClick={handleScrollToPortfolio}

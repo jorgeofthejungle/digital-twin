@@ -12,7 +12,7 @@ export default function About() {
   return (
     <AnimatedSection id="about" className="section-pad px-6 relative z-10">
       <div className="max-w-7xl mx-auto">
-        <SectionLabel text="What You Get" />
+        <SectionLabel text="About" />
         <motion.h2
           className="font-display font-bold text-4xl md:text-5xl text-slate-100 mb-16 max-w-2xl"
           initial={{ opacity: 0, y: 24 }}
