@@ -15,10 +15,10 @@ export default function Skills() {
   return (
     <AnimatedSection id="skills" className="section-pad relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-12">
-        <SectionLabel text="Skills & Expertise" />
+        <SectionLabel text="What I Do" />
         <h2 className="font-display font-bold text-4xl md:text-5xl text-slate-100 max-w-2xl">
-          Built on a broad<br />
-          <span className="gradient-text">skill foundation</span>
+          The territory<br />
+          <span className="gradient-text">I work in</span>
         </h2>
       </div>
 

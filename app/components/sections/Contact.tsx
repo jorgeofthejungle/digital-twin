@@ -122,7 +122,7 @@ export default function Contact() {
                     htmlFor="message"
                     className="text-xs font-semibold tracking-widest uppercase text-slate-500"
                   >
-                    What do you need automated?
+                    What&apos;s not working?
                   </label>
                   <textarea
                     id="message"

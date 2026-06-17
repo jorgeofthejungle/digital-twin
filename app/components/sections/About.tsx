@@ -12,7 +12,7 @@ export default function About() {
   return (
     <AnimatedSection id="about" className="section-pad px-6 relative z-10">
       <div className="max-w-7xl mx-auto">
-        <SectionLabel text="About Me" />
+        <SectionLabel text="What You Get" />
         <motion.h2
           className="font-display font-bold text-4xl md:text-5xl text-slate-100 mb-16 max-w-2xl"
           initial={{ opacity: 0, y: 24 }}
@@ -20,8 +20,8 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Operations-trained.<br />
-          <span className="gradient-text">AI-native.</span>
+          I work best<br />
+          <span className="gradient-text">when things are messy.</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">

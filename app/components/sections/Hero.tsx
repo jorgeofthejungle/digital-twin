@@ -51,11 +51,19 @@ export default function Hero() {
         {/* Location */}
         <motion.div
           variants={fadeUp}
-          className="flex items-center justify-center gap-2 text-slate-500 text-sm mb-10"
+          className="flex items-center justify-center gap-2 text-slate-500 text-sm mb-6"
         >
           <MapPin size={14} />
           <span>{PROFILE.location}</span>
         </motion.div>
+
+        {/* Subheadline */}
+        <motion.p
+          variants={fadeUp}
+          className="text-slate-400 text-lg max-w-xl mx-auto mb-10 leading-relaxed"
+        >
+          I help small business owners and ecommerce sellers get their operations under control — and keep them that way.
+        </motion.p>
 
         {/* CTAs */}
         <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

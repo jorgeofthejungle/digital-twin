@@ -2,22 +2,22 @@ import type { Profile, ExperienceItem, EducationItem, ProcessStep, ProjectItem }
 
 export const PROFILE: Profile = {
   name: "Joshua Burgos",
-  headline: "Operations & Customer Experience Specialist",
+  headline: "I fix what's breaking and build systems to keep it that way.",
   location: "Davao, Davao Region, Philippines",
   email: "its.joshburgos@gmail.com",
   linkedin: "https://www.linkedin.com/in/jorgeofthejungle",
   summary:
-    "Operations and customer experience professional with 11+ years spanning technical support, ecommerce, marketplace management, and retail operations. I've managed online stores across Amazon, eBay, Etsy, Walmart, and Shopify — handling listing optimization, platform compliance, search visibility, and the full customer message-to-resolution cycle. Lately I've been adding workflow automation to the mix, building with n8n, GoHighLevel, and Claude to streamline repetitive operations and customer-facing processes.",
+    "If your business is growing but your team is buried in repetitive work, or your marketplace listings are underperforming, that's exactly where I step in. I've spent 11+ years working directly in operations — across ecommerce, retail, and customer experience — learning how chaos builds up and what it takes to fix it for good. I work closely with business owners to untangle the mess: clearer processes, better systems, and automation that holds up without needing me around to babysit it.",
 };
 
 export const TYPING_PHRASES = [
-  "Operations & CX Specialist",
+  "Your ops, finally under control.",
   2000,
-  "Ecommerce Marketplace Manager",
+  "Ecommerce that actually converts.",
   2000,
-  "Workflow Automation Builder",
+  "Automation that runs itself.",
   2000,
-  "n8n + Claude Builder",
+  "Systems your team can follow.",
   2000,
 ];
 
@@ -67,31 +67,31 @@ export const PROCESS_STEPS: ProcessStep[] = [
   {
     step: 1,
     title: "Diagnose",
-    description: "Map the real bottleneck — not the symptom. Define the ROI target before touching a single tool.",
+    description: "Map the real bottleneck — not the symptom. You leave the first call knowing exactly what to fix and what it's worth.",
     icon: "Search",
   },
   {
     step: 2,
     title: "Propose",
-    description: "A structured automation plan with clear tech stack, timeline, and cost. No surprises.",
+    description: "A clear plan with tech stack, timeline, and cost. You approve everything before I touch anything.",
     icon: "FileText",
   },
   {
     step: 3,
     title: "Build",
-    description: "Build, test, and document in small verifiable steps. Production-grade from day one.",
+    description: "Weekly progress, no black boxes. You see it working before it goes live.",
     icon: "Code2",
   },
   {
     step: 4,
     title: "Hand Off",
-    description: "Full handoff with walkthrough and runbook. Your team can operate it without me.",
+    description: "Full walkthrough and a runbook your team can actually use. You won't need me to keep the lights on.",
     icon: "Package",
   },
   {
     step: 5,
     title: "Maintain",
-    description: "Monthly retainer to evolve the system as your needs change. Always improving.",
+    description: "Optional retainer for updates as your needs change. Or take the system and run — the documentation is yours either way.",
     icon: "RefreshCw",
   },
 ];
@@ -125,17 +125,17 @@ export const SKILLS = [
 ];
 
 export const STATS = [
-  { value: "11+", label: "Years of Experience" },
-  { value: "5", label: "Marketplaces Managed" },
-  { value: "2", label: "Degrees Earned" },
-  { value: "5", label: "Step Proven Process" },
+  { value: "11+", label: "Years solving ops problems" },
+  { value: "5", label: "Marketplaces, end to end" },
+  { value: "24h", label: "Typical reply time" },
+  { value: "5", label: "Step process, no surprises" },
 ];
 
 export const PROJECTS: ProjectItem[] = [
   {
     title: "Dental Clinic RAG",
     description:
-      "RAG-powered AI assistant built for a dental clinic. Lets staff and patients query clinic knowledge — procedures, pricing, scheduling policies — through a conversational interface backed by Claude.",
+      "A dental clinic needed staff and patients to get answers without tying up the front desk. This AI assistant handles common questions — procedures, pricing, scheduling — through a simple chat interface. Fewer phone calls, faster answers.",
     tags: ["RAG", "Claude AI", "n8n"],
     type: "personal",
     status: "in-progress",
@@ -143,7 +143,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     title: "StockPilot PH",
     description:
-      "Philippine Stock Exchange data pipeline and analysis tool. Scrapes, normalizes, and scores PSE-listed equities — surfacing fundamentals, momentum signals, and daily rankings in a self-hosted dashboard.",
+      "Manually tracking PSE equities is tedious and error-prone. StockPilot automates the pipeline — scraping, normalizing, and scoring PSE-listed stocks daily — so the signals surface without the legwork.",
     tags: ["Python", "PostgreSQL", "Data Analysis", "PSE"],
     type: "personal",
     status: "in-progress",

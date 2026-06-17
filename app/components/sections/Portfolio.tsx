@@ -19,7 +19,7 @@ export default function Portfolio() {
   return (
     <AnimatedSection id="portfolio" className="section-pad px-6 relative z-10">
       <div className="max-w-7xl mx-auto">
-        <SectionLabel text="Portfolio" />
+        <SectionLabel text="Work" />
         <motion.h2
           className="font-display font-bold text-4xl md:text-5xl text-slate-100 mb-16 max-w-2xl"
           initial={{ opacity: 0, y: 24 }}
@@ -27,8 +27,8 @@ export default function Portfolio() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Personal<br />
-          <span className="gradient-text">Projects</span>
+          What I&apos;m<br />
+          <span className="gradient-text">Building</span>
         </motion.h2>
 
         {/* Project cards */}
@@ -92,7 +92,7 @@ export default function Portfolio() {
                 Let&apos;s build something that works.
               </h3>
               <p className="text-slate-500 mb-8 leading-relaxed">
-                More case studies coming soon. In the meantime, let&apos;s talk about what you need automated.
+                These are early-stage builds. If you want to see how I&apos;d approach your specific problem, let&apos;s talk.
               </p>
               <motion.a
                 href="#contact"
