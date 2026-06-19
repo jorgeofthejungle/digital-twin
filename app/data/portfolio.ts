@@ -7,13 +7,15 @@ export const PROFILE: Profile = {
   email: "its.joshburgos@gmail.com",
   linkedin: "https://www.linkedin.com/in/jorgeofthejungle",
   summary:
-    "If your business is growing but your team is buried in repetitive work, or your marketplace listings are underperforming, that's exactly where I step in. I've spent 11+ years working directly in operations — across ecommerce, retail, and customer experience — learning how chaos builds up and what it takes to fix it for good. I work closely with business owners to untangle the mess: clearer processes, better systems, and automation that holds up without needing me around to babysit it.",
+    "If your business is growing but your team is buried in repetitive work, your marketplace listings are underperforming, or your ad spend isn't pulling its weight — that's exactly where I step in. I've spent 11+ years working directly in operations — across ecommerce, retail, and customer experience — learning how chaos builds up and what it takes to fix it for good. I work closely with business owners to untangle the mess: clearer processes, better systems, automation that holds up without needing me around to babysit it, and paid campaigns built to convert from day one.",
 };
 
 export const TYPING_PHRASES = [
   "Your ops, finally under control.",
   2000,
   "Marketplace listings that actually sell.",
+  2000,
+  "Ad campaigns built to convert.",
   2000,
   "Automation that runs itself.",
   2000,
@@ -44,7 +46,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     period: "Apr 2015 – Jan 2021",
     current: false,
     description:
-      "Drove online sales by building and optimizing digital storefronts across Amazon, eBay, Etsy, Walmart, and Shopify. Developed strategies to improve product visibility, increase traffic, and boost conversions. Applied SEO, A/B testing, and data analysis to maximize ROI. Managed listings, promotional campaigns, and third-party integrations. Handled customer inquiries across email, chat, and phone.",
+      "Drove online sales by building and optimizing digital storefronts across Amazon, eBay, Etsy, Walmart, and Shopify. Planned and managed paid media campaigns end to end — structuring ad accounts, writing conversion-focused copy, and cutting spend on what wasn't working. Applied SEO, A/B testing, and data analysis to maximize ROI. Managed listings, promotional campaigns, and third-party integrations. Handled customer inquiries across email, chat, and phone.",
   },
 ];
 
@@ -110,6 +112,9 @@ export const STACK = [
 export const SKILLS = [
   "Ecommerce Operations",
   "Marketplace Management",
+  "Media Buying",
+  "Campaign Structure",
+  "Ad Copywriting",
   "Customer Experience",
   "Workflow Automation",
   "n8n",
@@ -120,7 +125,6 @@ export const SKILLS = [
   "SEO & A/B Testing",
   "Team Leadership",
   "Operations Management",
-  "Technical Support",
   "Process Improvement",
 ];
 
