@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShoppingBag, Settings2, Zap } from "lucide-react";
+import { ShoppingBag, Settings2, Zap, Target } from "lucide-react";
 import type { ElementType } from "react";
 import GlassCard from "@/app/components/ui/GlassCard";
 import SectionLabel from "@/app/components/ui/SectionLabel";
@@ -41,6 +41,14 @@ const SERVICES: ServiceCard[] = [
       "I build automations that connect your tools and handle the manual work end to end. Your team gets hours back every week with fewer errors and no more copy-paste.",
     tags: ["n8n", "GoHighLevel", "Claude AI", "API Integrations"],
   },
+  {
+    icon: Target,
+    area: "Paid Media & Advertising",
+    headline: "Ad spend that earns its keep.",
+    outcome:
+      "I plan and manage paid campaigns end to end — account structure, copy that converts, and the discipline to cut what's not working. You stop guessing at ROI and start seeing it.",
+    tags: ["Media Buying", "Ad Copywriting", "Campaign Structure"],
+  },
 ];
 
 export default function Skills() {
@@ -60,7 +68,7 @@ export default function Skills() {
         </motion.h2>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"

@@ -40,7 +40,7 @@ export default function About() {
               <div className="flex flex-col gap-3">
                 <div>
                   <span className="text-xs font-mono text-brand-cyan/60 tracking-wider uppercase">Specialties</span>
-                  <p className="text-sm text-slate-400 mt-1">Ecommerce ops · Marketplace management · Workflow automation · Customer experience</p>
+                  <p className="text-sm text-slate-400 mt-1">Ecommerce ops · Marketplace management · Paid media & advertising · Workflow automation · Customer experience</p>
                 </div>
                 <div>
                   <span className="text-xs font-mono text-brand-cyan/60 tracking-wider uppercase">Platforms</span>
